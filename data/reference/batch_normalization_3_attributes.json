@@ -1,0 +1,12 @@
+{
+    "layer_name": "batch_normalization_3",
+    "type": "BatchNormalization",
+    "input_shape": [
+        null,
+        256
+    ],
+    "output_shape": [
+        null,
+        256
+    ]
+}

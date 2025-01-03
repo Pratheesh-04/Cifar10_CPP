@@ -1,0 +1,21 @@
+{
+    "layer_name": "max_pooling2d",
+    "type": "MaxPooling2D",
+    "input_shape": [
+        null,
+        32,
+        32,
+        64
+    ],
+    "output_shape": [
+        null,
+        16,
+        16,
+        64
+    ],
+    "strides": [
+        2,
+        2
+    ],
+    "padding": "valid"
+}

@@ -1,0 +1,483 @@
+{
+    "layers": [
+        {
+            "layer_name": "conv2d",
+            "type": "Conv2D",
+            "input_file_path": "data/input/conv2d_input.bin",
+            "output_file_path": "data/output/conv2d_output.bin",
+            "weights_file_paths": [
+                "data/weights/conv2d_kernel_0.bin",
+                "data/weights/conv2d_bias_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    32,
+                    32,
+                    3
+                ],
+                "output_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ],
+                "kernel_size": [
+                    3,
+                    3
+                ],
+                "strides": [
+                    1,
+                    1
+                ],
+                "padding": "same",
+                "activation": "linear"
+            }
+        },
+        {
+            "layer_name": "batch_normalization",
+            "type": "BatchNormalization",
+            "input_file_path": "data/input/batch_normalization_input.bin",
+            "output_file_path": "data/output/batch_normalization_output.bin",
+            "weights_file_paths": [
+                "data/weights/batch_normalization_gamma_0.bin",
+                "data/weights/batch_normalization_beta_0.bin",
+                "data/weights/batch_normalization_moving_mean_0.bin",
+                "data/weights/batch_normalization_moving_variance_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ],
+                "output_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ]
+            }
+        },
+        {
+            "layer_name": "activation",
+            "type": "Activation",
+            "input_file_path": "data/input/activation_input.bin",
+            "output_file_path": "data/output/activation_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ],
+                "output_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ],
+                "activation": "relu"
+            }
+        },
+        {
+            "layer_name": "max_pooling2d",
+            "type": "MaxPooling2D",
+            "input_file_path": "data/input/max_pooling2d_input.bin",
+            "output_file_path": "data/output/max_pooling2d_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    32,
+                    32,
+                    64
+                ],
+                "output_shape": [
+                    null,
+                    16,
+                    16,
+                    64
+                ],
+                "strides": [
+                    2,
+                    2
+                ],
+                "padding": "valid"
+            }
+        },
+        {
+            "layer_name": "dropout",
+            "type": "Dropout",
+            "input_file_path": "data/input/dropout_input.bin",
+            "output_file_path": "data/output/dropout_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    16,
+                    16,
+                    64
+                ],
+                "output_shape": [
+                    null,
+                    16,
+                    16,
+                    64
+                ]
+            }
+        },
+        {
+            "layer_name": "conv2d_1",
+            "type": "Conv2D",
+            "input_file_path": "data/input/conv2d_1_input.bin",
+            "output_file_path": "data/output/conv2d_1_output.bin",
+            "weights_file_paths": [
+                "data/weights/conv2d_1_kernel_0.bin",
+                "data/weights/conv2d_1_bias_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    16,
+                    16,
+                    64
+                ],
+                "output_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ],
+                "kernel_size": [
+                    5,
+                    5
+                ],
+                "strides": [
+                    1,
+                    1
+                ],
+                "padding": "same",
+                "activation": "linear"
+            }
+        },
+        {
+            "layer_name": "batch_normalization_1",
+            "type": "BatchNormalization",
+            "input_file_path": "data/input/batch_normalization_1_input.bin",
+            "output_file_path": "data/output/batch_normalization_1_output.bin",
+            "weights_file_paths": [
+                "data/weights/batch_normalization_1_gamma_0.bin",
+                "data/weights/batch_normalization_1_beta_0.bin",
+                "data/weights/batch_normalization_1_moving_mean_0.bin",
+                "data/weights/batch_normalization_1_moving_variance_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ],
+                "output_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ]
+            }
+        },
+        {
+            "layer_name": "activation_1",
+            "type": "Activation",
+            "input_file_path": "data/input/activation_1_input.bin",
+            "output_file_path": "data/output/activation_1_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ],
+                "output_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ],
+                "activation": "relu"
+            }
+        },
+        {
+            "layer_name": "max_pooling2d_1",
+            "type": "MaxPooling2D",
+            "input_file_path": "data/input/max_pooling2d_1_input.bin",
+            "output_file_path": "data/output/max_pooling2d_1_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    16,
+                    16,
+                    192
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    192
+                ],
+                "strides": [
+                    2,
+                    2
+                ],
+                "padding": "valid"
+            }
+        },
+        {
+            "layer_name": "dropout_1",
+            "type": "Dropout",
+            "input_file_path": "data/input/dropout_1_input.bin",
+            "output_file_path": "data/output/dropout_1_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    192
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    192
+                ]
+            }
+        },
+        {
+            "layer_name": "conv2d_2",
+            "type": "Conv2D",
+            "input_file_path": "data/input/conv2d_2_input.bin",
+            "output_file_path": "data/output/conv2d_2_output.bin",
+            "weights_file_paths": [
+                "data/weights/conv2d_2_kernel_0.bin",
+                "data/weights/conv2d_2_bias_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    192
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "kernel_size": [
+                    3,
+                    3
+                ],
+                "strides": [
+                    1,
+                    1
+                ],
+                "padding": "same",
+                "activation": "linear"
+            }
+        },
+        {
+            "layer_name": "batch_normalization_2",
+            "type": "BatchNormalization",
+            "input_file_path": "data/input/batch_normalization_2_input.bin",
+            "output_file_path": "data/output/batch_normalization_2_output.bin",
+            "weights_file_paths": [
+                "data/weights/batch_normalization_2_gamma_0.bin",
+                "data/weights/batch_normalization_2_beta_0.bin",
+                "data/weights/batch_normalization_2_moving_mean_0.bin",
+                "data/weights/batch_normalization_2_moving_variance_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ]
+            }
+        },
+        {
+            "layer_name": "activation_2",
+            "type": "Activation",
+            "input_file_path": "data/input/activation_2_input.bin",
+            "output_file_path": "data/output/activation_2_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "activation": "relu"
+            }
+        },
+        {
+            "layer_name": "dropout_2",
+            "type": "Dropout",
+            "input_file_path": "data/input/dropout_2_input.bin",
+            "output_file_path": "data/output/dropout_2_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "output_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ]
+            }
+        },
+        {
+            "layer_name": "flatten",
+            "type": "Flatten",
+            "input_file_path": "data/input/flatten_input.bin",
+            "output_file_path": "data/output/flatten_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8,
+                    8,
+                    128
+                ],
+                "output_shape": [
+                    null,
+                    8192
+                ]
+            }
+        },
+        {
+            "layer_name": "dense",
+            "type": "Dense",
+            "input_file_path": "data/input/dense_input.bin",
+            "output_file_path": "data/output/dense_output.bin",
+            "weights_file_paths": [
+                "data/weights/dense_kernel_0.bin",
+                "data/weights/dense_bias_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    8192
+                ],
+                "output_shape": [
+                    null,
+                    256
+                ],
+                "activation": "linear"
+            }
+        },
+        {
+            "layer_name": "batch_normalization_3",
+            "type": "BatchNormalization",
+            "input_file_path": "data/input/batch_normalization_3_input.bin",
+            "output_file_path": "data/output/batch_normalization_3_output.bin",
+            "weights_file_paths": [
+                "data/weights/batch_normalization_3_gamma_0.bin",
+                "data/weights/batch_normalization_3_beta_0.bin",
+                "data/weights/batch_normalization_3_moving_mean_0.bin",
+                "data/weights/batch_normalization_3_moving_variance_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    256
+                ],
+                "output_shape": [
+                    null,
+                    256
+                ]
+            }
+        },
+        {
+            "layer_name": "activation_3",
+            "type": "Activation",
+            "input_file_path": "data/input/activation_3_input.bin",
+            "output_file_path": "data/output/activation_3_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    256
+                ],
+                "output_shape": [
+                    null,
+                    256
+                ],
+                "activation": "relu"
+            }
+        },
+        {
+            "layer_name": "dropout_3",
+            "type": "Dropout",
+            "input_file_path": "data/input/dropout_3_input.bin",
+            "output_file_path": "data/output/dropout_3_output.bin",
+            "weights_file_paths": [],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    256
+                ],
+                "output_shape": [
+                    null,
+                    256
+                ]
+            }
+        },
+        {
+            "layer_name": "dense_1",
+            "type": "Dense",
+            "input_file_path": "data/input/dense_1_input.bin",
+            "output_file_path": "data/output/dense_1_output.bin",
+            "weights_file_paths": [
+                "data/weights/dense_1_kernel_0.bin",
+                "data/weights/dense_1_bias_0.bin"
+            ],
+            "attributes": {
+                "input_shape": [
+                    null,
+                    256
+                ],
+                "output_shape": [
+                    null,
+                    10
+                ],
+                "activation": "softmax"
+            }
+        }
+    ]
+}

@@ -1,0 +1,16 @@
+{
+    "layer_name": "dropout",
+    "type": "Dropout",
+    "input_shape": [
+        null,
+        16,
+        16,
+        64
+    ],
+    "output_shape": [
+        null,
+        16,
+        16,
+        64
+    ]
+}

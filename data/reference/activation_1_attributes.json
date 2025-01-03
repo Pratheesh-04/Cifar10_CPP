@@ -1,0 +1,17 @@
+{
+    "layer_name": "activation_1",
+    "type": "Activation",
+    "input_shape": [
+        null,
+        16,
+        16,
+        192
+    ],
+    "output_shape": [
+        null,
+        16,
+        16,
+        192
+    ],
+    "activation": "relu"
+}

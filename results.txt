@@ -1,0 +1,232 @@
+Layer: "conv2d"
+  Type: "Conv2D"
+  Input Shape: null 32 32 3 
+  Output Shape: null 32 32 64 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/conv2d_input.bin
+    Input Data (first 10 elements): -0.617302 1.10299 -0.300201 -1.49248 -0.163965 -0.889151 2.44775 -0.796247 -0.821112 0.114273 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_kernel_0.bin
+    Weights Data (first 10 elements): 0.275956 -0.0896526 -0.227953 -0.158561 0.131893 0.143718 -0.0780376 -0.133795 -0.240258 -0.0613068 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_bias_0.bin
+    Weights Data (first 10 elements): -0.147276 -0.0122776 0.0109398 -0.0194521 -0.035447 -0.0509531 -0.0477211 0.0148546 0.00888917 0.0280021 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/conv2d_output.bin
+    Output Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+
+Layer: "batch_normalization"
+  Type: "BatchNormalization"
+  Input Shape: null 32 32 64 
+  Output Shape: null 32 32 64 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/batch_normalization_input.bin
+    Input Data (first 10 elements): 0.298322 -0.406708 -0.299378 -0.268556 -0.493229 -0.854678 0.587404 0.229126 0.452059 0.487035 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_gamma_0.bin
+    Weights Data (first 10 elements): 1.30326 0.629402 0.583832 0.980372 1.30415 1.06164 0.74302 0.580682 0.818854 0.954771 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_beta_0.bin
+    Weights Data (first 10 elements): -0.602461 -0.0647014 -0.267786 -0.157387 -0.384359 -0.615788 -0.200608 -0.187161 -0.679388 -0.274585 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_moving_mean_0.bin
+    Weights Data (first 10 elements): -0.167737 -0.0485048 -0.0340697 0.00573718 -0.0684252 -0.0773232 -0.0885653 0.0615814 0.0899505 0.0378601 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_moving_variance_0.bin
+    Weights Data (first 10 elements): 0.00429436 0.0499151 0.0428981 0.00283379 0.0186914 0.00574923 0.0136284 0.00607395 0.0139973 0.0325188 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/batch_normalization_output.bin
+    Output Data (first 10 elements): 7.7452 -1.06386 -1.00708 -4.50041 -4.33237 -10.6613 3.95209 0.969587 1.74186 2.06787 
+
+Layer: "activation"
+  Type: "Activation"
+  Input Shape: null 32 32 64 
+  Output Shape: null 32 32 64 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/activation_input.bin
+    Input Data (first 10 elements): 7.7452 -1.06386 -1.00708 -4.50041 -4.33237 -10.6613 3.95209 0.969587 1.74186 2.06787 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/activation_output.bin
+    Output Data (first 10 elements): 7.7452 0 0 0 0 0 3.95209 0.969587 1.74186 2.06787 
+
+Layer: "max_pooling2d"
+  Type: "MaxPooling2D"
+  Input Shape: null 32 32 64 
+  Output Shape: null 16 16 64 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/max_pooling2d_input.bin
+    Input Data (first 10 elements): 7.7452 0 0 0 0 0 3.95209 0.969587 1.74186 2.06787 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/max_pooling2d_output.bin
+    Output Data (first 10 elements): 7.7452 1.50218 0.707455 24.5653 9.38678 12.1107 4.10897 0.969587 1.74186 2.06787 
+
+Layer: "dropout"
+  Type: "Dropout"
+  Input Shape: null 16 16 64 
+  Output Shape: null 16 16 64 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dropout_input.bin
+    Input Data (first 10 elements): 7.7452 1.50218 0.707455 24.5653 9.38678 12.1107 4.10897 0.969587 1.74186 2.06787 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dropout_output.bin
+    Output Data (first 10 elements): 7.7452 1.50218 0.707455 24.5653 9.38678 12.1107 4.10897 0.969587 1.74186 2.06787 
+
+Layer: "conv2d_1"
+  Type: "Conv2D"
+  Input Shape: null 16 16 64 
+  Output Shape: null 16 16 192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/conv2d_1_input.bin
+    Input Data (first 10 elements): 7.7452 1.50218 0.707455 24.5653 9.38678 12.1107 4.10897 0.969587 1.74186 2.06787 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_1_kernel_0.bin
+    Weights Data (first 10 elements): 0.0366259 -0.114916 -0.00163583 -0.0646945 -0.0876258 -0.147544 -0.0497291 -0.0371633 -0.178301 -0.00171446 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_1_bias_0.bin
+    Weights Data (first 10 elements): 0.000907276 0.00120734 0.000497925 0.0002205 0.000509119 0.00210394 0.00117167 0.000319166 0.000970377 -0.000992506 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/conv2d_1_output.bin
+    Output Data (first 10 elements): -25.5549 69.8028 -44.2195 -0.808811 -44.7866 -21.4681 -41.6389 -4.15542 -71.9167 -94.8913 
+
+Layer: "batch_normalization_1"
+  Type: "BatchNormalization"
+  Input Shape: null 16 16 192 
+  Output Shape: null 16 16 192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/batch_normalization_1_input.bin
+    Input Data (first 10 elements): -25.5549 69.8028 -44.2195 -0.808811 -44.7866 -21.4681 -41.6389 -4.15542 -71.9167 -94.8913 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_1_gamma_0.bin
+    Weights Data (first 10 elements): 0.682628 0.553379 0.767042 0.811484 0.713148 0.905879 0.980277 0.627179 0.776737 0.924374 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_1_beta_0.bin
+    Weights Data (first 10 elements): -0.688785 -0.688891 -0.888008 -0.665343 -0.597971 -0.744448 -0.718394 -0.689047 -0.756604 -0.889269 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_1_moving_mean_0.bin
+    Weights Data (first 10 elements): -3.99724 0.00752906 -2.75414 -3.46212 -4.78061 -2.83031 -4.66936 -2.46601 -2.56129 -4.91544 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_1_moving_variance_0.bin
+    Weights Data (first 10 elements): 10.7647 12.4032 10.9269 11.7604 14.7313 11.0737 16.4295 10.6863 9.3233 14.6053 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/batch_normalization_1_output.bin
+    Output Data (first 10 elements): -5.17381 10.2775 -10.5094 -0.0375174 -8.03106 -5.81786 -9.65902 -1.01316 -18.3985 -22.6515 
+
+Layer: "activation_1"
+  Type: "Activation"
+  Input Shape: null 16 16 192 
+  Output Shape: null 16 16 192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/activation_1_input.bin
+    Input Data (first 10 elements): -5.17381 10.2775 -10.5094 -0.0375174 -8.03106 -5.81786 -9.65902 -1.01316 -18.3985 -22.6515 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/activation_1_output.bin
+    Output Data (first 10 elements): 0 10.2775 0 0 0 0 0 0 0 0 
+
+Layer: "max_pooling2d_1"
+  Type: "MaxPooling2D"
+  Input Shape: null 16 16 192 
+  Output Shape: null 8 8 192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/max_pooling2d_1_input.bin
+    Input Data (first 10 elements): 0 10.2775 0 0 0 0 0 0 0 0 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/max_pooling2d_1_output.bin
+    Output Data (first 10 elements): 0 13.8432 0 0 0 0 0 0 0 0 
+
+Layer: "dropout_1"
+  Type: "Dropout"
+  Input Shape: null 8 8 192 
+  Output Shape: null 8 8 192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dropout_1_input.bin
+    Input Data (first 10 elements): 0 13.8432 0 0 0 0 0 0 0 0 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dropout_1_output.bin
+    Output Data (first 10 elements): 0 13.8432 0 0 0 0 0 0 0 0 
+
+Layer: "conv2d_2"
+  Type: "Conv2D"
+  Input Shape: null 8 8 192 
+  Output Shape: null 8 8 128 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/conv2d_2_input.bin
+    Input Data (first 10 elements): 0 13.8432 0 0 0 0 0 0 0 0 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_2_kernel_0.bin
+    Weights Data (first 10 elements): 0.000223306 -0.0135962 0.00826197 -0.0962108 0.0280285 0.0624428 -0.012974 0.0663186 -0.0308237 -0.0822546 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/conv2d_2_bias_0.bin
+    Weights Data (first 10 elements): -0.000297549 0.000702745 0.00122818 0.000247388 0.000900385 -0.000708883 -0.00107161 0.00336835 0.000444442 0.00231673 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/conv2d_2_output.bin
+    Output Data (first 10 elements): -20.3402 -0.936082 -21.6638 -27.2359 -23.8875 -21.6503 -23.1987 -5.86568 -11.2795 -15.3189 
+
+Layer: "batch_normalization_2"
+  Type: "BatchNormalization"
+  Input Shape: null 8 8 128 
+  Output Shape: null 8 8 128 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/batch_normalization_2_input.bin
+    Input Data (first 10 elements): -20.3402 -0.936082 -21.6638 -27.2359 -23.8875 -21.6503 -23.1987 -5.86568 -11.2795 -15.3189 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_2_gamma_0.bin
+    Weights Data (first 10 elements): 0.764249 0.779822 0.858993 0.722969 0.79086 0.810469 0.675699 0.780529 0.865875 0.759512 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_2_beta_0.bin
+    Weights Data (first 10 elements): -0.856399 -0.829702 -0.852772 -0.655374 -0.692219 -0.74102 -0.774693 -0.893282 -0.718335 -0.706768 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_2_moving_mean_0.bin
+    Weights Data (first 10 elements): -1.58257 -0.254078 -1.80436 -1.40912 -1.88502 -1.8393 -1.92688 -1.58203 -2.8839 -2.11068 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_2_moving_variance_0.bin
+    Weights Data (first 10 elements): 2.33562 2.02741 2.61735 2.47016 2.1912 2.4928 1.58623 2.14198 2.57689 2.30747 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/batch_normalization_2_output.bin
+    Output Data (first 10 elements): -10.2346 -1.20313 -11.3953 -12.5333 -12.4447 -10.9085 -12.1834 -3.17727 -5.24602 -7.30942 
+
+Layer: "activation_2"
+  Type: "Activation"
+  Input Shape: null 8 8 128 
+  Output Shape: null 8 8 128 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/activation_2_input.bin
+    Input Data (first 10 elements): -10.2346 -1.20313 -11.3953 -12.5333 -12.4447 -10.9085 -12.1834 -3.17727 -5.24602 -7.30942 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/activation_2_output.bin
+    Output Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+
+Layer: "dropout_2"
+  Type: "Dropout"
+  Input Shape: null 8 8 128 
+  Output Shape: null 8 8 128 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dropout_2_input.bin
+    Input Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dropout_2_output.bin
+    Output Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+
+Layer: "flatten"
+  Type: "Flatten"
+  Input Shape: null 8 8 128 
+  Output Shape: null 8192 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/flatten_input.bin
+    Input Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/flatten_output.bin
+    Output Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+
+Layer: "dense"
+  Type: "Dense"
+  Input Shape: null 8192 
+  Output Shape: null 256 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dense_input.bin
+    Input Data (first 10 elements): 0 0 0 0 0 0 0 0 0 0 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/dense_kernel_0.bin
+    Weights Data (first 10 elements): -0.0216518 0.00951021 0.00310628 0.00208775 0.024748 -0.0494365 -0.000425187 0.0122723 -0.0555027 0.012068 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/dense_bias_0.bin
+    Weights Data (first 10 elements): 2.10318e-06 -0.000180788 0.000743707 0.00102628 5.45122e-05 0.000523008 -0.000112695 -0.000400189 -0.000900834 -0.000396596 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dense_output.bin
+    Output Data (first 10 elements): -53.3916 -10.2334 -45.556 -3.09036 16.2719 -75.5709 -23.8082 -9.82735 -9.76804 -35.914 
+
+Layer: "batch_normalization_3"
+  Type: "BatchNormalization"
+  Input Shape: null 256 
+  Output Shape: null 256 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/batch_normalization_3_input.bin
+    Input Data (first 10 elements): -53.3916 -10.2334 -45.556 -3.09036 16.2719 -75.5709 -23.8082 -9.82735 -9.76804 -35.914 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_3_gamma_0.bin
+    Weights Data (first 10 elements): 0.755412 0.831417 0.71315 0.686879 0.721255 0.769197 0.744863 0.867888 0.767544 0.705989 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_3_beta_0.bin
+    Weights Data (first 10 elements): -0.412454 -0.172223 -0.0529586 -0.361111 -0.104384 -0.255681 -0.19998 -0.211012 -0.337642 -0.170245 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_3_moving_mean_0.bin
+    Weights Data (first 10 elements): -1.46755 -0.087638 -0.732079 -0.32362 -0.139585 -2.07513 0.113956 0.0584958 -0.0501109 -1.28033 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/batch_normalization_3_moving_variance_0.bin
+    Weights Data (first 10 elements): 2.68849 4.11852 3.4134 2.30949 4.0442 3.30305 3.08009 3.7224 3.14812 2.94377 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/batch_normalization_3_output.bin
+    Output Data (first 10 elements): -24.3301 -4.32828 -17.3525 -1.61136 5.7809 -31.3568 -10.3514 -4.6574 -4.54086 -14.4188 
+
+Layer: "activation_3"
+  Type: "Activation"
+  Input Shape: null 256 
+  Output Shape: null 256 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/activation_3_input.bin
+    Input Data (first 10 elements): -24.3301 -4.32828 -17.3525 -1.61136 5.7809 -31.3568 -10.3514 -4.6574 -4.54086 -14.4188 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/activation_3_output.bin
+    Output Data (first 10 elements): 0 0 0 0 5.7809 0 0 0 0 0 
+
+Layer: "dropout_3"
+  Type: "Dropout"
+  Input Shape: null 256 
+  Output Shape: null 256 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dropout_3_input.bin
+    Input Data (first 10 elements): 0 0 0 0 5.7809 0 0 0 0 0 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dropout_3_output.bin
+    Output Data (first 10 elements): 0 0 0 0 5.7809 0 0 0 0 0 
+
+Layer: "dense_1"
+  Type: "Dense"
+  Input Shape: null 256 
+  Output Shape: null 10 
+  Reading input from: F:/MCW/c++ application/Project_Root/data/input/dense_1_input.bin
+    Input Data (first 10 elements): 0 0 0 0 5.7809 0 0 0 0 0 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/dense_1_kernel_0.bin
+    Weights Data (first 10 elements): -0.151597 -0.264371 0.165281 0.00405025 -0.135216 0.084226 -0.172742 0.138576 0.086018 -0.156921 
+  Reading weights from: F:/MCW/c++ application/Project_Root/data/weights/dense_1_bias_0.bin
+    Weights Data (first 10 elements): 0.0840161 -0.199754 -0.123112 0.297213 -0.000758788 -0.12765 0.0189882 0.15817 -0.206306 0.0295456 
+  Reading output from: F:/MCW/c++ application/Project_Root/data/output/dense_1_output.bin
+    Output Data (first 10 elements): 0 2.10645e-23 4.18438e-15 6.04995e-19 7.04296e-17 7.29918e-30 1 1.16334e-27 0 1.13504e-17 
+

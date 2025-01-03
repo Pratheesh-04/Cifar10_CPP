@@ -1,0 +1,13 @@
+{
+    "layer_name": "dense",
+    "type": "Dense",
+    "input_shape": [
+        null,
+        8192
+    ],
+    "output_shape": [
+        null,
+        256
+    ],
+    "activation": "linear"
+}
