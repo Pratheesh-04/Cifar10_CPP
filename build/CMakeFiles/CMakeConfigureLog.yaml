@@ -24,7 +24,7 @@ events:
       The output was:
       0
       MSBuild version 17.12.12+1cce77968 for .NET Framework
-      Build started 04-01-2025 11:02:41.
+      Build started 04-01-2025 20:33:27.
       
       Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\3.31.3\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -62,7 +62,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:01.04
+      Time Elapsed 00:00:02.30
       
       
       Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
@@ -88,7 +88,7 @@ events:
       The output was:
       0
       MSBuild version 17.12.12+1cce77968 for .NET Framework
-      Build started 04-01-2025 11:02:42.
+      Build started 04-01-2025 20:33:29.
       
       Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\3.31.3\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
       PrepareForBuild:
@@ -126,7 +126,7 @@ events:
           0 Warning(s)
           0 Error(s)
       
-      Time Elapsed 00:00:00.92
+      Time Elapsed 00:00:01.94
       
       
       Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
@@ -145,8 +145,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-8yrnch"
-      binary: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-8yrnch"
+      source: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-5wsxsb"
+      binary: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-5wsxsb"
     cmakeVariables:
       CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS /W3"
       CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -155,49 +155,49 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-8yrnch'
+        Change Dir: 'F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-5wsxsb'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_87259.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_6cb55.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.12.12+1cce77968 for .NET Framework
-        Build started 04-01-2025 11:02:43.
+        Build started 04-01-2025 20:33:32.
         
-        Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\cmTC_87259.vcxproj" on node 1 (default targets).
+        Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\cmTC_6cb55.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_87259.dir\\Debug\\".
+          Creating directory "cmTC_6cb55.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\".
-          Creating directory "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\".
+          Creating directory "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\".
+          Creating directory "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\unsuccessfulbuild".
+          Creating "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_87259.dir\\Debug\\\\" /Fd"cmTC_87259.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6cb55.dir\\Debug\\\\" /Fd"cmTC_6cb55.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34435 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_87259.dir\\Debug\\\\" /Fd"cmTC_87259.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
+          cl /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_6cb55.dir\\Debug\\\\" /Fd"cmTC_6cb55.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TC /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCCompilerABI.c"
           CMakeCCompilerABI.c
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\cmTC_87259.exe" /INCREMENTAL /ILK:"cmTC_87259.dir\\Debug\\cmTC_87259.ilk" /NOLOGO /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-8yrnch/Debug/cmTC_87259.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-8yrnch/Debug/cmTC_87259.lib" /MACHINE:X64  /machine:x64 cmTC_87259.dir\\Debug\\CMakeCCompilerABI.obj
-          cmTC_87259.vcxproj -> F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\cmTC_87259.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\cmTC_6cb55.exe" /INCREMENTAL /ILK:"cmTC_6cb55.dir\\Debug\\cmTC_6cb55.ilk" /NOLOGO /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-5wsxsb/Debug/cmTC_6cb55.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-5wsxsb/Debug/cmTC_6cb55.lib" /MACHINE:X64  /machine:x64 cmTC_6cb55.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_6cb55.vcxproj -> F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\cmTC_6cb55.exe
         AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\cmTC_87259.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\cmTC_87259.write.1u.tlog" "cmTC_87259.dir\\Debug\\vcpkg.applocal.log"
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\cmTC_6cb55.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\cmTC_6cb55.write.1u.tlog" "cmTC_6cb55.dir\\Debug\\vcpkg.applocal.log"
           'pwsh.exe' is not recognized as an internal or external command,
           operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\cmTC_87259.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\cmTC_87259.write.1u.tlog" "cmTC_87259.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\Debug\\cmTC_87259.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\cmTC_87259.write.1u.tlog" "cmTC_87259.dir\\Debug\\vcpkg.applocal.log"
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\cmTC_6cb55.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\cmTC_6cb55.write.1u.tlog" "cmTC_6cb55.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\Debug\\cmTC_6cb55.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\cmTC_6cb55.write.1u.tlog" "cmTC_6cb55.dir\\Debug\\vcpkg.applocal.log"
         FinalizeBuildStatus:
-          Deleting file "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\unsuccessfulbuild".
-          Touching "cmTC_87259.dir\\Debug\\cmTC_87259.tlog\\cmTC_87259.lastbuildstate".
-        Done Building Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-8yrnch\\cmTC_87259.vcxproj" (default targets).
+          Deleting file "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\unsuccessfulbuild".
+          Touching "cmTC_6cb55.dir\\Debug\\cmTC_6cb55.tlog\\cmTC_6cb55.lastbuildstate".
+        Done Building Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-5wsxsb\\cmTC_6cb55.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.86
+        Time Elapsed 00:00:01.91
         
       exitCode: 0
   -
@@ -237,8 +237,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-g64in1"
-      binary: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-g64in1"
+      source: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-ggoklw"
+      binary: "F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-ggoklw"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /W3 /GR /EHsc"
       CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
@@ -248,49 +248,49 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: 'F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-g64in1'
+        Change Dir: 'F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-ggoklw'
         
-        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_290d8.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_8ffd4.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
         MSBuild version 17.12.12+1cce77968 for .NET Framework
-        Build started 04-01-2025 11:02:44.
+        Build started 04-01-2025 20:33:34.
         
-        Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\cmTC_290d8.vcxproj" on node 1 (default targets).
+        Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\cmTC_8ffd4.vcxproj" on node 1 (default targets).
         PrepareForBuild:
-          Creating directory "cmTC_290d8.dir\\Debug\\".
+          Creating directory "cmTC_8ffd4.dir\\Debug\\".
           Structured output is enabled. The formatting of compiler diagnostics will reflect the error hierarchy. See https://aka.ms/cpp/structured-output for more details.
-          Creating directory "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\".
-          Creating directory "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\".
+          Creating directory "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\".
+          Creating directory "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\".
         InitializeBuildStatus:
-          Creating "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
-          Touching "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\unsuccessfulbuild".
+          Creating "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+          Touching "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\unsuccessfulbuild".
         VcpkgTripletSelection:
           Using triplet "x64-windows" from "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\"
           Using normalized configuration "Debug"
         ClCompile:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_290d8.dir\\Debug\\\\" /Fd"cmTC_290d8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\CL.exe /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8ffd4.dir\\Debug\\\\" /Fd"cmTC_8ffd4.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           Microsoft (R) C/C++ Optimizing Compiler Version 19.42.34435 for x64
           Copyright (C) Microsoft Corporation.  All rights reserved.
-          cl /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_290d8.dir\\Debug\\\\" /Fd"cmTC_290d8.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
+          cl /c /I"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\include" /Zi /W3 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_8ffd4.dir\\Debug\\\\" /Fd"cmTC_8ffd4.dir\\Debug\\vc143.pdb" /external:W3 /Gd /TP /errorReport:queue "F:\\cmake\\share\\cmake-3.31\\Modules\\CMakeCXXCompilerABI.cpp"
           CMakeCXXCompilerABI.cpp
         Link:
-          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\cmTC_290d8.exe" /INCREMENTAL /ILK:"cmTC_290d8.dir\\Debug\\cmTC_290d8.ilk" /NOLOGO /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-g64in1/Debug/cmTC_290d8.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-g64in1/Debug/cmTC_290d8.lib" /MACHINE:X64  /machine:x64 cmTC_290d8.dir\\Debug\\CMakeCXXCompilerABI.obj
-          cmTC_290d8.vcxproj -> F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\cmTC_290d8.exe
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.42.34433\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\cmTC_8ffd4.exe" /INCREMENTAL /ILK:"cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.ilk" /NOLOGO /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib" /LIBPATH:"F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\manual-link" kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\lib\\*.lib" /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-ggoklw/Debug/cmTC_8ffd4.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"F:/MCW/c++ application/Project_Root/build/CMakeFiles/CMakeScratch/TryCompile-ggoklw/Debug/cmTC_8ffd4.lib" /MACHINE:X64  /machine:x64 cmTC_8ffd4.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_8ffd4.vcxproj -> F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\cmTC_8ffd4.exe
         AppLocalFromInstalled:
-          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\cmTC_290d8.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\cmTC_290d8.write.1u.tlog" "cmTC_290d8.dir\\Debug\\vcpkg.applocal.log"
+          pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\cmTC_8ffd4.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\cmTC_8ffd4.write.1u.tlog" "cmTC_8ffd4.dir\\Debug\\vcpkg.applocal.log"
           'pwsh.exe' is not recognized as an internal or external command,
           operable program or batch file.
-          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\cmTC_290d8.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\cmTC_290d8.write.1u.tlog" "cmTC_290d8.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
-          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\Debug\\cmTC_290d8.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\cmTC_290d8.write.1u.tlog" "cmTC_290d8.dir\\Debug\\vcpkg.applocal.log"
+          The command "pwsh.exe -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\cmTC_8ffd4.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\cmTC_8ffd4.write.1u.tlog" "cmTC_8ffd4.dir\\Debug\\vcpkg.applocal.log"" exited with code 9009.
+          "C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -ExecutionPolicy Bypass -noprofile -File "F:\\MCW\\Assignment 2\\vcpkg\\scripts\\buildsystems\\msbuild\\applocal.ps1" "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\Debug\\cmTC_8ffd4.exe" "F:\\MCW\\Assignment 2\\vcpkg\\installed\\x64-windows\\debug\\bin" "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\cmTC_8ffd4.write.1u.tlog" "cmTC_8ffd4.dir\\Debug\\vcpkg.applocal.log"
         FinalizeBuildStatus:
-          Deleting file "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\unsuccessfulbuild".
-          Touching "cmTC_290d8.dir\\Debug\\cmTC_290d8.tlog\\cmTC_290d8.lastbuildstate".
-        Done Building Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-g64in1\\cmTC_290d8.vcxproj" (default targets).
+          Deleting file "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\unsuccessfulbuild".
+          Touching "cmTC_8ffd4.dir\\Debug\\cmTC_8ffd4.tlog\\cmTC_8ffd4.lastbuildstate".
+        Done Building Project "F:\\MCW\\c++ application\\Project_Root\\build\\CMakeFiles\\CMakeScratch\\TryCompile-ggoklw\\cmTC_8ffd4.vcxproj" (default targets).
         
         Build succeeded.
             0 Warning(s)
             0 Error(s)
         
-        Time Elapsed 00:00:00.89
+        Time Elapsed 00:00:01.87
         
       exitCode: 0
   -
