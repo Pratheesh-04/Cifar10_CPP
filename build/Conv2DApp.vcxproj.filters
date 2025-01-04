@@ -13,6 +13,9 @@
     <ClCompile Include="F:\MCW\c++ application\Project_Root\Operators\src\maxpooling.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="F:\MCW\c++ application\Project_Root\utilities\src\test.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="F:\MCW\c++ application\Project_Root\utilities\src\utils.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

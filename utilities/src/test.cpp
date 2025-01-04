@@ -47,7 +47,7 @@ string normalize_path(const fs::path& file_path) {
     return path_str;
 }
 
-int main() {
+int main1() {
     // Set base path for the data directory
     fs::path base_dir = "F:/MCW/c++ application/Project_Root";
 

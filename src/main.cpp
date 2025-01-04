@@ -26,6 +26,7 @@
 
         // Variables to store Conv2D attributes
         string base_path = "F:/MCW/c++ application/Project_Root/";
+        string output_file = "F:/MCW/c++ application/Project_Root/layer_outputs.tx/";
 
         // Initialize a shared variable for layer outputs
         vector<float> layer_output;
@@ -66,10 +67,11 @@
                 conv2d_1d(layer_output, kernels_flat, biases, conv2d_output, 
                 input_height, input_width, input_channels,
                 kernel_height, kernel_width, output_channels,
-                stride_height, padding);
+                stride_height, padding, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = conv2d_output;
+                // write_to_file(output_file, layer_output);
 
                 // Display output for the first channel (channel 0) after Conv2D
                 cout << "===============================================================================" << endl;
@@ -96,7 +98,7 @@
 
                 // Perform Batch Normalization
                 vector<float> batch_normalized_output;
-                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width);
+                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = batch_normalized_output;
@@ -111,7 +113,7 @@
                 std::array<int, 2> pool_size = {2,2};
                 
                 vector<float> maxpooling_output;
-                max_pooling2d(layer_output,maxpooling_output,input_shape,output_shape,pool_size,strides,padding);
+                max_pooling2d(layer_output,maxpooling_output,input_shape,output_shape,pool_size,strides,padding, layer["layer_name"]);
                 
                 layer_output = maxpooling_output;
             }
@@ -142,7 +144,7 @@
                 conv2d_1d(layer_output, kernels_flat, biases, conv2d_output, 
                 input_height, input_width, input_channels,
                 kernel_height, kernel_width, output_channels,
-                stride_height, padding);
+                stride_height, padding, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = conv2d_output;
@@ -168,7 +170,7 @@
 
                 // Perform Batch Normalization
                 vector<float> batch_normalized_output;
-                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width);
+                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = batch_normalized_output;
@@ -182,7 +184,7 @@
                 std::array<int, 2> pool_size = {2,2};
                 
                 vector<float> maxpooling_output;
-                max_pooling2d(layer_output,maxpooling_output,input_shape,output_shape,pool_size,strides,padding);
+                max_pooling2d(layer_output,maxpooling_output,input_shape,output_shape,pool_size,strides,padding, layer["layer_name"]);
                 
                 layer_output = maxpooling_output;
             }
@@ -213,7 +215,7 @@
                 conv2d_1d(layer_output, kernels_flat, biases, conv2d_output, 
                 input_height, input_width, input_channels,
                 kernel_height, kernel_width, output_channels,
-                stride_height, padding);
+                stride_height, padding, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = conv2d_output;
@@ -239,7 +241,7 @@
 
                 // Perform Batch Normalization
                 vector<float> batch_normalized_output;
-                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width);
+                batch_normalization_1d(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels,input_height, input_width, layer["layer_name"]);
 
                 // Update the shared layer output
                 layer_output = batch_normalized_output;
@@ -287,7 +289,7 @@
 
                 // Perform Batch Normalization
                 vector<float> batch_normalized_output;
-                batch_normalization_1d1(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels);
+                batch_normalization_1d1(layer_output, batch_normalized_output, gamma, beta, moving_mean, moving_variance, epsilon, output_channels, layer["layer_name"]);
                  // Update the shared layer output
                 layer_output = batch_normalized_output;
             }

@@ -118,7 +118,6 @@ for layer in layers:
             padding=padding
         )
 
-        
         # Update the shared layer output
         layer_output = maxpooling_output.numpy()
 

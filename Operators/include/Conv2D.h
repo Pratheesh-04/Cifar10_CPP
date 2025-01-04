@@ -30,7 +30,7 @@ void conv2d_1d(const vector<float> &input,
                vector<float> &output,
                int input_height, int input_width, int input_channels,
                int kernel_height, int kernel_width, int output_channels,
-               int stride, const string &padding);
+               int stride, const string &padding, string layername);
 
 
 #endif // CONV2D_H

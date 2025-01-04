@@ -26,7 +26,14 @@ void conv2d_1d(const vector<float> &input,
                vector<float> &output,
                int input_height, int input_width, int input_channels,
                int kernel_height, int kernel_width, int output_channels,
-               int stride, const string &padding) {
+               int stride, const string &padding, string layername) {
+
+    // Create an output file
+    ofstream outputFile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    if (!outputFile.is_open()) {
+        cerr << "Error: Unable to open file for writing!" << endl;
+        exit(EXIT_FAILURE);
+    }
 
     // Calculate padding
     if (padding != "same" && padding != "valid") {
@@ -91,13 +98,29 @@ void conv2d_1d(const vector<float> &input,
          << output_width << ", " 
          << output_channels << "]" << endl;
 
-    cout << "First channel of output:\n";
+    // Write results to the output file
+    outputFile << "Conv2D Output Shape: [" 
+               << output_height << ", " 
+               << output_width << ", " 
+               << output_channels << "]\n";
+
     for (int h = 0; h < output_height; ++h) {
         for (int w = 0; w < output_width; ++w) {
-            int output_idx = (h * output_width + w) * output_channels;
-            cout << fixed << setprecision(6) << output[output_idx] << " ";
+            outputFile << "[";
+            for (int c = 0; c < output_channels; ++c) {
+                int output_idx = (h * output_width + w) * output_channels + c;
+                outputFile << fixed << setprecision(6) << output[output_idx];
+                if (c < output_channels - 1) {
+                    outputFile << ", ";
+                }
+            }
+            outputFile << "] ";
         }
-        cout << "\n";
+        outputFile << "\n";
     }
-    cout << "====================\n";
+
+    cout << "Layer output successfully written to 'conv2d_layer_output.txt'!" << endl;
+
+    // Close the file
+    outputFile.close();
 }

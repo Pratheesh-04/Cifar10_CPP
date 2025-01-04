@@ -3,12 +3,20 @@
 #include <cmath>
 #include <vector>
 #include <iomanip>
+#include <string>
 #include <stdexcept>
+#include <cassert>
+#include <fstream>
+#include <chrono> // For measuring execution time
 
 void batch_normalization_1d(const std::vector<float>& input, std::vector<float>& output,
                              const std::vector<float>& gamma, const std::vector<float>& beta,
                              const std::vector<float>& moving_mean, const std::vector<float>& moving_variance,
-                             float epsilon, size_t channels, size_t height, size_t width) {
+                             float epsilon, size_t channels, size_t height, size_t width,
+                             std::string layername ) {
+    // Start measuring time
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     // Calculate the spatial size per channel
     size_t spatial_size = height * width;
 
@@ -27,28 +35,42 @@ void batch_normalization_1d(const std::vector<float>& input, std::vector<float>&
         }
     }
 
-    // Print debug information for the first channel (optional)
-    std::cout << "Batch Normalization" << std::endl;
-    std::cout << "First channel of output:\n";
+    // Apply ReLU activation
+    for (int i = 0; i < output.size(); ++i) {
+        output[i] = std::max(0.0f, output[i]);
+    }
+
+    // Stop measuring time
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
+
+    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
+
+    std::ofstream file("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+// Append mode
+    if (!file.is_open()) {
+        throw std::runtime_error("Error: Unable to open file ");
+    }
+
+    file << "Batch Normalization Layer Output:\n";
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             int idx = (y * width + x) * channels;
-            std::cout << std::fixed << std::setprecision(6) << output[idx] << " ";
+            file << std::fixed << std::setprecision(6) << output[idx] << " ";
         }
-        std::cout << "\n";
+        file << "\n";
     }
-    std::cout << "====================\n";
-
-    for (int i = 0; i < output.size(); ++i) {
-        // ReLU: set negative values to 0
-        output[i] = std::max(0.0f, output[i]);
-    }
+    file << "====================\n";
+    file.close();
 }
 
 void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>& output,
                             const std::vector<float>& gamma, const std::vector<float>& beta,
                             const std::vector<float>& moving_mean, const std::vector<float>& moving_variance,
-                            float epsilon, size_t channels) {
+                            float epsilon, size_t channels, std::string layername) {
+    // Start measuring time
+    auto start_time = std::chrono::high_resolution_clock::now();
+
     if (input.size() % channels != 0) {
         throw std::runtime_error("Input size is not divisible by the number of channels.");
     }
@@ -64,18 +86,32 @@ void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>
         }
     }
 
-    std::cout << "Batch Normalization Output Values:" << std::endl;
-        for (size_t i = 0; i < output.size(); ++i) {
-            std::cout << std::fixed << std::setprecision(6) << output[i] << " ";
-            if ((i + 1) % 10 == 0) {
-                std::cout << std::endl; // Print 10 values per line
-            }
-        }
-    std::cout << std::endl;
-    std::cout << "Batch normalization completed. Output size: " << output.size() << std::endl;
-
+    // Apply ReLU activation
     for (int i = 0; i < output.size(); ++i) {
-        // ReLU: set negative values to 0
         output[i] = std::max(0.0f, output[i]);
     }
+
+    // Stop measuring time
+    auto end_time = std::chrono::high_resolution_clock::now();
+    auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
+
+    std::cout<< "Batch Normalization Output";
+    std::cout << "\nExecution Time (microseconds): " << execution_time << "\n";
+
+    // Write the output to the specified file
+    std::ofstream outputFile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+
+    if (!outputFile.is_open()) {
+        throw std::runtime_error("Error: Unable to open file ");
+    }
+
+    outputFile << "Batch Normalization 1D Layer Output:\n";
+    for (size_t i = 0; i < output.size(); ++i) {
+        outputFile << std::fixed << std::setprecision(6) << output[i] << " ";
+        if ((i + 1) % 10 == 0) { // Write 10 values per line
+            outputFile << "\n";
+        }
+    }
+    outputFile << "====================\n";
+    outputFile.close();
 }
