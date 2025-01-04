@@ -49,7 +49,7 @@ void max_pooling2d(const std::vector<float>& input, std::vector<float>& output,
                     output[output_idx] = max_val;
 
                     // Write result to file
-                    output_file << max_val << " ";
+                    output_file << max_val << std::endl;
                 }
                 output_file << "\n"; // Newline after each channel
             }
@@ -64,9 +64,9 @@ void max_pooling2d(const std::vector<float>& input, std::vector<float>& output,
     std::chrono::duration<double> elapsed_time = end_time - start_time;
 
     // Print execution time
-    std::cout << "Execution Time: " << elapsed_time.count() << " seconds" << std::endl;
-
-    std::cout << "Results written to file: " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt" << std::endl;
+    std::cout<< "====================================================="<< std::endl;
     std::cout << "MaxPooling2D Output Shape: [" << batch << ", " << out_height << ", " << out_width << ", " << input_shape[3] << "]" << std::endl;
-    std::cout << "====================================================" << std::endl;
+    std::cout << "Execution Time: " << elapsed_time.count() << " seconds" << std::endl;
+    std::cout << "Results written to file: " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt" << std::endl;
+    std::cout<< "====================================================="<< std::endl;
 }

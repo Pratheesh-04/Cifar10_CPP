@@ -44,24 +44,26 @@ void batch_normalization_1d(const std::vector<float>& input, std::vector<float>&
     auto end_time = std::chrono::high_resolution_clock::now();
     auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
 
-    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
-
+    // Write the output to the specified file
     std::ofstream file("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
-// Append mode
     if (!file.is_open()) {
         throw std::runtime_error("Error: Unable to open file ");
     }
 
-    file << "Batch Normalization Layer Output:\n";
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             int idx = (y * width + x) * channels;
-            file << std::fixed << std::setprecision(6) << output[idx] << " ";
+            file << std::fixed << std::setprecision(6) << output[idx] << std::endl;
         }
-        file << "\n";
     }
-    file << "====================\n";
     file.close();
+
+    // Print output shape
+    std::cout << "=====================================================" << std::endl;
+    std::cout << "Output Shape: [" << height << ", " << width << ", " << channels << "]" << std::endl;
+    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
+    std::cout << "Layer output successfully written to " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt" << std::endl;
+    std::cout << "=====================================================" << std::endl;
 }
 
 void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>& output,
@@ -95,9 +97,6 @@ void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>
     auto end_time = std::chrono::high_resolution_clock::now();
     auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
 
-    std::cout<< "Batch Normalization Output";
-    std::cout << "\nExecution Time (microseconds): " << execution_time << "\n";
-
     // Write the output to the specified file
     std::ofstream outputFile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
 
@@ -105,13 +104,15 @@ void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>
         throw std::runtime_error("Error: Unable to open file ");
     }
 
-    outputFile << "Batch Normalization 1D Layer Output:\n";
     for (size_t i = 0; i < output.size(); ++i) {
-        outputFile << std::fixed << std::setprecision(6) << output[i] << " ";
-        if ((i + 1) % 10 == 0) { // Write 10 values per line
-            outputFile << "\n";
-        }
+        outputFile << std::fixed << std::setprecision(6) << output[i] << std::endl;
     }
-    outputFile << "====================\n";
     outputFile.close();
+
+    // Print output shape
+    std::cout << "=====================================================" << std::endl;
+    std::cout << "Batch Normalization Output Shape: [" << spatial_size << ", " << channels << "]" << std::endl;
+    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
+    std::cout << "Layer output successfully written to " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt" << std::endl;
+    std::cout << "=====================================================" << std::endl;
 }

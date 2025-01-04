@@ -264,7 +264,7 @@
                 std::string activation = layer["attributes"]["activation"];
                 // Create a Dense layer instance
                 vector<float> dense_output;
-                dense(layer_output,weights,biases, dense_output,dense_input_shape,dense_output_shape,activation);
+                dense(layer_output,weights,biases, dense_output,dense_input_shape,dense_output_shape,activation, layer["layer_name"]);
                 layer_output = dense_output;
             }
 
@@ -311,7 +311,7 @@
                 std::string activation = layer["attributes"]["activation"];
                 // Create a Dense layer instance
                 vector<float> dense_output;
-                dense(layer_output,weights,biases, dense_output,dense_input_shape,dense_output_shape,activation);
+                dense(layer_output,weights,biases, dense_output,dense_input_shape,dense_output_shape,activation, layer["layer_name"]);
                 layer_output = dense_output;
             }
         }
