@@ -1,8 +1,10 @@
 # Ignore .vscode folder
 .vscode/
-
+*.vscode
+/
 # Ignore build folder
 build/
-
+*.build
+/
 # Ignore test.py file
 test.py
