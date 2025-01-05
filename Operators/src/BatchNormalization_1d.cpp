@@ -1,20 +1,18 @@
 #include "batchnormalization_1d.h"
 #include <iostream>
+#include <fstream> // For file handling
 #include <cmath>
+#include <string>
 #include <vector>
 #include <iomanip>
-#include <string>
 #include <stdexcept>
-#include <cassert>
-#include <fstream>
 #include <chrono> // For measuring execution time
 
 void batch_normalization_1d(const std::vector<float>& input, std::vector<float>& output,
                              const std::vector<float>& gamma, const std::vector<float>& beta,
                              const std::vector<float>& moving_mean, const std::vector<float>& moving_variance,
-                             float epsilon, size_t channels, size_t height, size_t width,
-                             std::string layername ) {
-    // Start measuring time
+                             float epsilon, size_t channels, size_t height, size_t width, std::string layername) {
+    // Start timer
     auto start_time = std::chrono::high_resolution_clock::now();
 
     // Calculate the spatial size per channel
@@ -35,42 +33,46 @@ void batch_normalization_1d(const std::vector<float>& input, std::vector<float>&
         }
     }
 
-    // Apply ReLU activation
     for (int i = 0; i < output.size(); ++i) {
+        // ReLU: set negative values to 0
         output[i] = std::max(0.0f, output[i]);
     }
 
-    // Stop measuring time
+    // Stop timer
     auto end_time = std::chrono::high_resolution_clock::now();
-    auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
+    std::chrono::duration<double> execution_time = end_time - start_time;
 
-    // Write the output to the specified file
-    std::ofstream file("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
-    if (!file.is_open()) {
-        throw std::runtime_error("Error: Unable to open file ");
+    std::cout << "=====================================================\n";
+    // Print execution time
+    std::cout << "Execution time for batch_normalization_1d: " << execution_time.count() << " seconds\n";
+
+    // Save the first channel to a text file
+    std::ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    if (!outfile.is_open()) {
+        std::cerr << "Error opening file for writing!" << std::endl;
+        return;
     }
 
+    // Debug output for the first channel
     for (int y = 0; y < height; ++y) {
         for (int x = 0; x < width; ++x) {
             int idx = (y * width + x) * channels;
-            file << std::fixed << std::setprecision(6) << output[idx] << std::endl;
+            // std::cout << std::fixed << std::setprecision(6) << output[idx] << " "; // Print to console
+            outfile << output[idx] << " "; // Write to file
         }
+        // std::cout << "\n";
+        outfile << "\n";
     }
-    file.close();
-
-    // Print output shape
-    std::cout << "=====================================================" << std::endl;
-    std::cout << "Output Shape: [" << height << ", " << width << ", " << channels << "]" << std::endl;
-    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
-    std::cout << "Layer output successfully written to " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt" << std::endl;
-    std::cout << "=====================================================" << std::endl;
+    outfile.close();
+    std::cout << "Output of First channel saved to data/cpp_outputs/"+layername+".txt" << std::endl;
+    std::cout << "=====================================================\n";
 }
 
 void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>& output,
-                            const std::vector<float>& gamma, const std::vector<float>& beta,
-                            const std::vector<float>& moving_mean, const std::vector<float>& moving_variance,
-                            float epsilon, size_t channels, std::string layername) {
-    // Start measuring time
+                             const std::vector<float>& gamma, const std::vector<float>& beta,
+                             const std::vector<float>& moving_mean, const std::vector<float>& moving_variance,
+                             float epsilon, size_t channels, std::string layername) {
+    // Start timer
     auto start_time = std::chrono::high_resolution_clock::now();
 
     if (input.size() % channels != 0) {
@@ -88,31 +90,38 @@ void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>
         }
     }
 
-    // Apply ReLU activation
     for (int i = 0; i < output.size(); ++i) {
+        // ReLU: set negative values to 0
         output[i] = std::max(0.0f, output[i]);
     }
 
-    // Stop measuring time
+    // Stop timer
     auto end_time = std::chrono::high_resolution_clock::now();
-    auto execution_time = std::chrono::duration_cast<std::chrono::microseconds>(end_time - start_time).count();
+    std::chrono::duration<double> execution_time = end_time - start_time;
 
-    // Write the output to the specified file
-    std::ofstream outputFile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    std::cout << "=====================================================\n";
+    // Print execution time
+    std::cout << "Execution time for batch_normalization_1d1: " << execution_time.count() << " seconds\n";
 
-    if (!outputFile.is_open()) {
-        throw std::runtime_error("Error: Unable to open file ");
+    // Save the first channel to a text file
+    std::ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    if (!outfile.is_open()) {
+        std::cerr << "Error opening file for writing!" << std::endl;
+        return;
     }
 
-    for (size_t i = 0; i < output.size(); ++i) {
-        outputFile << std::fixed << std::setprecision(6) << output[i] << std::endl;
-    }
-    outputFile.close();
+    for (size_t s = 0; s < spatial_size; ++s) {
+        size_t idx = s * channels; // First channel
+        // std::cout << std::fixed << std::setprecision(6) << output[idx] << " "; // Print to console
+        outfile << output[idx] << " "; // Write to file
 
-    // Print output shape
-    std::cout << "=====================================================" << std::endl;
-    std::cout << "Batch Normalization Output Shape: [" << spatial_size << ", " << channels << "]" << std::endl;
-    std::cout << "Execution Time (microseconds): " << execution_time << "\n";
-    std::cout << "Layer output successfully written to " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt" << std::endl;
-    std::cout << "=====================================================" << std::endl;
+        if ((s + 1) % 10 == 0) {
+            // std::cout << std::endl; // Print 10 values per line
+            outfile << std::endl;
+        }
+    }
+    std::cout << std::endl;
+    outfile.close();
+    std::cout << "Output of First channel saved to data/cpp_outputs/"+layername+".txt" << std::endl;
+    std::cout << "=====================================================\n";
 }

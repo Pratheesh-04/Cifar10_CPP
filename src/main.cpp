@@ -8,6 +8,7 @@
     #include <cassert>
     #include "dense.h"
     #include "batchnormalization_1d.h"
+    #include "unit_test.h"
 
     using json = nlohmann::json;
     using namespace std;
@@ -26,7 +27,7 @@
 
         // Variables to store Conv2D attributes
         string base_path = "F:/MCW/c++ application/Project_Root/";
-        string output_file = "F:/MCW/c++ application/Project_Root/layer_outputs.tx/";
+        string output_file = "F:/MCW/c++ application/Project_Root/layer_outputs.txt/";
 
         // Initialize a shared variable for layer outputs
         vector<float> layer_output;
@@ -315,5 +316,66 @@
                 layer_output = dense_output;
             }
         }
+        std::vector<std::string> labels = {"Airplane", "Automobile", "Bird", "Cat", "Deer",
+                                       "Dog", "Frog", "Horse", "Ship", "Truck"};
+
+    // Find the index of the maximum value
+        auto max_iter = std::max_element(layer_output.begin(), layer_output.end());
+        int predicted_index = std::distance(layer_output.begin(), max_iter);
+
+        // Predict the class
+        std::string predicted_class = labels[predicted_index];
+
+        // Print the prediction
+        std::cout << "Predicted class: " << predicted_class << " (Index: " << predicted_index << ")" << std::endl;
+
+        std::ofstream outfile("F:/MCW/c++ application/Project_Root/report/model_prediction_output.txt",std::ios::app);
+        if (outfile.is_open()) {
+            outfile << "Predicted class at cpp: " << predicted_class << " (Index: " << predicted_index << ")" << std::endl;
+            cout << "=====================================================\n";
+            outfile.close();
+        } else {
+            std::cerr << "Error opening file for writing!" << std::endl;
+        }
+
+        cout<<"Unit Test Begins" << endl;
+        std::string output_file1 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/conv2d.txt";
+        std::string expected_file1 = "F:/MCW/c++ application/Project_Root/data/python_outputs/conv2d_output.txt";
+        std::string output_file4 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/batch_normalization.txt";
+        std::string expected_file4 = "F:/MCW/c++ application/Project_Root/data/python_outputs/batch_normalization_output.txt";
+        std::string output_file9 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/max_pooling2d.txt";
+        std::string expected_file9 = "F:/MCW/c++ application/Project_Root/data/python_outputs/max_pooling2d_output.txt";
+        std::string output_file2 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/conv2d_1.txt";
+        std::string expected_file2 = "F:/MCW/c++ application/Project_Root/data/python_outputs/conv2d_1_output.txt";
+        std::string output_file5 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/batch_normalization_1.txt";
+        std::string expected_file5 = "F:/MCW/c++ application/Project_Root/data/python_outputs/batch_normalization_1_output.txt";
+        std::string output_file8 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/max_pooling2d_1.txt";
+        std::string expected_file8 = "F:/MCW/c++ application/Project_Root/data/python_outputs/max_pooling2d_1_output.txt";
+        std::string output_file3 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/conv2d_2.txt";
+        std::string expected_file3 = "F:/MCW/c++ application/Project_Root/data/python_outputs/conv2d_2_output.txt";
+        std::string output_file6 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/batch_normalization_2.txt";
+        std::string expected_file6 = "F:/MCW/c++ application/Project_Root/data/python_outputs/batch_normalization_2_output.txt";
+        std::string output_file10 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/dense.txt";
+        std::string expected_file10 = "F:/MCW/c++ application/Project_Root/data/python_outputs/dense_output.txt";
+        std::string output_file7 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/batch_normalization_3.txt";
+        std::string expected_file7 = "F:/MCW/c++ application/Project_Root/data/python_outputs/batch_normalization_3_output.txt";
+        std::string output_file11 = "F:/MCW/c++ application/Project_Root/data/cpp_outputs/dense_1.txt";
+        std::string expected_file11 = "F:/MCW/c++ application/Project_Root/data/python_outputs/dense_1_output.txt";
+
+        // Compare the files
+        unit_test("conv1",output_file1, expected_file1);
+        unit_test("batch_norm1",output_file4, expected_file4);
+        unit_test("max_pool1",output_file9, expected_file9);
+        unit_test("conv2",output_file2, expected_file2);
+        unit_test("batch_norm2",output_file5, expected_file5);
+        unit_test("max_pool2",output_file8, expected_file8);
+        unit_test("conv3",output_file3, expected_file3);
+        unit_test("batch_norm3",output_file6, expected_file6);
+        unit_test("dense1",output_file10, expected_file10);
+        unit_test("batch_norm4",output_file7, expected_file7);
+        unit_test("dense2",output_file11, expected_file11);
+
+        cout <<"Unit Test Ends";
+
         return 0;
     }

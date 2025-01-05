@@ -1,11 +1,11 @@
 #include "dense.h"
 #include <iostream>
-#include <fstream>  // For file handling
+#include <fstream> // For file handling
 #include <cmath>
 #include <algorithm>
 #include <array>
 #include <stdexcept>
-#include <chrono>  // For timing
+#include <chrono> // For timing
 
 void softmax(std::vector<float>& tensor) {
     float max_val = *std::max_element(tensor.begin(), tensor.end());
@@ -22,11 +22,13 @@ void softmax(std::vector<float>& tensor) {
 void dense(const std::vector<float>& input, const std::vector<float>& weights,
            const std::vector<float>& bias, std::vector<float>& output,
            const std::array<int, 2>& input_shape, const std::array<int, 2>& output_shape,
-           const std::string& activation, const std::string& layername) {
+           const std::string& activation, std::string layername) {
+
+    // Validate the sizes of input, weights, and output
     int input_size = input_shape[1];
     int output_size = output_shape[1];
 
-    output.resize(output_size, 0.0f);
+    output.resize(output_size, 0.0f); 
 
     if (weights.size() != input_size * output_size) {
         throw std::runtime_error("Weights size does not match input_size * output_size.");
@@ -36,7 +38,7 @@ void dense(const std::vector<float>& input, const std::vector<float>& weights,
         throw std::runtime_error("Bias size does not match output_size.");
     }
 
-    // Start timing
+    // Start timing the dense operation
     auto start_time = std::chrono::high_resolution_clock::now();
 
     // Perform the dense operation (matrix multiplication + bias)
@@ -48,31 +50,33 @@ void dense(const std::vector<float>& input, const std::vector<float>& weights,
         output[o] = sum + bias[o];
     }
 
+    // End timing the dense operation
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> execution_time = end_time - start_time;
+
     // Apply activation if needed
     if (activation == "softmax") {
         softmax(output);
     }
 
-    // End timing
-    auto end_time = std::chrono::high_resolution_clock::now();
-    std::chrono::duration<double> elapsed_time = end_time - start_time;
-
-    // Save results to file
-    std::ofstream output_file("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
-    if (!output_file.is_open()) {
-        std::cerr << "Error: Could not open file " << std::endl;
-        return;
-    }
-
-    for (const auto& value : output) {
-        output_file << value << "\n";
-    }
-    output_file.close();
-
-    // Print results
-    std::cout<< "=====================================================" << std::endl;
+    // Print dense layer shape
     std::cout << "Dense Output Shape: [" << output_size << "]" << std::endl;
-    std::cout << "Execution Time: " << elapsed_time.count() << " seconds" << std::endl;
-    std::cout << "Results written to file: " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt" << std::endl;
-    std::cout<< "=====================================================";
+
+    // Print execution time
+    std::cout << "Dense Layer Execution Time: " << execution_time.count() << " seconds" << std::endl;
+
+    // Write the output to a text file
+    std::ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    if (outfile.is_open()) {
+        for (int i = 0; i < output_size; i++) {
+            outfile << output[i] << " ";
+        }
+        outfile << "\n";
+        outfile.close();
+    std::cout << "Output of First channel saved to data/cpp_outputs/"+layername+".txt" << std::endl;
+    } else {
+        std::cerr << "Error opening file for writing!" << std::endl;
+    }
+
+    std::cout << "=====================================================\n";
 }

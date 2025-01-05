@@ -336,6 +336,7 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="F:\MCW\c++ application\Project_Root\Operators\src\Conv2D.cpp" />
     <ClCompile Include="F:\MCW\c++ application\Project_Root\Operators\src\dense.cpp" />
     <ClCompile Include="F:\MCW\c++ application\Project_Root\Operators\src\maxpooling.cpp" />
+    <ClCompile Include="F:\MCW\c++ application\Project_Root\Test_Operators\src\unit_test.cpp" />
     <ClCompile Include="F:\MCW\c++ application\Project_Root\utilities\src\test.cpp" />
     <ClCompile Include="F:\MCW\c++ application\Project_Root\utilities\src\utils.cpp" />
     <ClCompile Include="F:\MCW\c++ application\Project_Root\src\main.cpp" />

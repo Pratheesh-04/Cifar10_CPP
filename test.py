@@ -16,6 +16,37 @@ base_path = "F:/MCW/c++ application/Project_Root/"
 # Initialize a shared variable for layer outputs
 layer_output = None
 
+# def print_first_channel_outputs(model, input_data):
+#     layer_outputs = [layer.output for layer in model.layers]  # Get outputs of all layers
+#     intermediate_model = tf.keras.models.Model(inputs=model.input, outputs=layer_outputs)
+#     # Get outputs for the input data
+#     outputs = intermediate_model.predict(input_data)
+#     for i, output in enumerate(outputs):
+#         print(f"Layer {i+1} - {model.layers[i].name}")
+#         if len(output.shape) > 2:  # For layers with multiple channels
+#             print(output[..., 0])  # Print only the first channel
+#         else:
+#             print(output)  # For 1D or scalar outputs, print as is
+#         print("-" * 50)
+
+def save_output_to_file(output, layer_name, output_height=32, output_width=32):
+    # Check the shape of the output before flattening
+    print(output)
+    print(f"Shape of the layer output: {output.shape}")
+
+    # Flatten the output into a 1D vector
+    flattened_output = output.flatten()
+    flattened_output = flattened_output[:output_height*output_width]
+    output_str = " ".join(map(str, flattened_output))
+
+    # Save the output string to a text file
+    file_path ="F:/MCW/c++ application/Project_Root/data/python_outputs/" + f"{layer_name}_output.txt"
+    with open(file_path, 'w') as f:
+        f.write(output_str)
+
+    print(f"Output for {layer_name} saved to {file_path}")
+
+
 # Process each layer sequentially
 for layer in layers:
     if layer["layer_name"] == "conv2d":
@@ -61,11 +92,7 @@ for layer in layers:
         layer_output = conv2d_output.numpy()
 
         # Display full output for the first channel (channel 0) after Conv2D
-        print("===============================================================================")
-        print("Conv2D Full Output (Channel 0):")
-        np.set_printoptions(threshold=np.inf)  # Ensure full output is displayed
-        print(layer_output[0, :, :, 0])  # Display the first channel of the first batch
-        print("===============================================================================")
+        save_output_to_file(layer_output[0], layer["layer_name"],32,32)
 
     elif layer["layer_name"] == "batch_normalization":
         weights_file_paths = layer["weights_file_paths"]
@@ -96,12 +123,8 @@ for layer in layers:
         )
 
         # Convert TensorFlow tensor to numpy array for inspection
-        layer_output_np = layer_output.numpy()
-
-        # Display output for the first channel (channel 0) after Batch Normalization
-        print("Batch Normalization Output (Channel 0):")
-        print(layer_output_np[0, :, :, 0])  # Displaying the first channel of the first batch
-        print("===============================================================================")
+        layer_output = layer_output.numpy()
+        save_output_to_file(layer_output[0], layer["layer_name"],32,32)
 
     if layer["layer_name"] == "max_pooling2d":
         strides = layer["attributes"]["strides"]
@@ -120,12 +143,7 @@ for layer in layers:
 
         # Update the shared layer output
         layer_output = maxpooling_output.numpy()
-
-        # Display output for the first channel (channel 0) after MaxPooling
-        print("===============================================================================")
-        print("MaxPooling Output (Channel 0):")
-        print(layer_output[0, :, :, 0])  # Displaying the first channel of the first batch
-        print("===============================================================================")
+        save_output_to_file(layer_output[0], layer["layer_name"],16,16)
     
     elif layer["layer_name"] == "conv2d_1":
         weights_file_paths = layer["weights_file_paths"]
@@ -164,13 +182,7 @@ for layer in layers:
 
         # Update the shared layer output
         layer_output = conv2d_output.numpy()
-
-        # Display full output for the first channel (channel 0) after Conv2D
-        print("===============================================================================")
-        print("Conv2D Full Output (Channel 0):")
-        np.set_printoptions(threshold=np.inf)  # Ensure full output is displayed
-        print(layer_output[0, :, :, 0])  # Display the first channel of the first batch
-        print("===============================================================================")
+        save_output_to_file(layer_output[0], layer["layer_name"],16,16)
     
     elif layer["layer_name"] == "batch_normalization_1":
         weights_file_paths = layer["weights_file_paths"]
@@ -201,12 +213,8 @@ for layer in layers:
         )
 
         # Convert TensorFlow tensor to numpy array for inspection
-        layer_output_np = layer_output.numpy()
-
-        # Display output for the first channel (channel 0) after Batch Normalization
-        print("Batch Normalization Output (Channel 0):")
-        print(layer_output_np[0, :, :, 0])  # Displaying the first channel of the first batch
-        print("===============================================================================")
+        layer_output = layer_output.numpy()
+        save_output_to_file(layer_output[0], layer["layer_name"],16,16)
 
     elif layer["layer_name"] == "max_pooling2d_1":
         strides = layer["attributes"]["strides"]
@@ -226,12 +234,7 @@ for layer in layers:
         
         # Update the shared layer output
         layer_output = maxpooling_output.numpy()
-
-        # Display output for the first channel (channel 0) after MaxPooling
-        print("===============================================================================")
-        print("MaxPooling Output (Channel 0):")
-        print(layer_output[0, :, :, 0])  # Displaying the first channel of the first batch
-        print("===============================================================================")
+        save_output_to_file(layer_output[0], layer["layer_name"],8,8)
 
     elif layer["layer_name"] == "conv2d_2":
         weights_file_paths = layer["weights_file_paths"]
@@ -270,13 +273,7 @@ for layer in layers:
 
         # Update the shared layer output
         layer_output = conv2d_output.numpy()
-
-        # Display full output for the first channel (channel 0) after Conv2D
-        print("===============================================================================")
-        print("Conv2D Full Output (Channel 0):")
-        np.set_printoptions(threshold=np.inf)  # Ensure full output is displayed
-        print(layer_output[0, :, :, 0])  # Display the first channel of the first batch
-        print("===============================================================================")
+        save_output_to_file(layer_output[0], layer["layer_name"],8,8)
     
     elif layer["layer_name"] == "batch_normalization_2":
         weights_file_paths = layer["weights_file_paths"]
@@ -307,12 +304,9 @@ for layer in layers:
         )
 
         # Convert TensorFlow tensor to numpy array for inspection
-        layer_output_np = layer_output.numpy()
-
-        # Display output for the first channel (channel 0) after Batch Normalization
-        print("Batch Normalization Output (Channel 0):")
-        print(layer_output_np[0, :, :, 0])  # Displaying the first channel of the first batch
-        print("===============================================================================")
+        layer_output = layer_output.numpy()
+        save_output_to_file(layer_output[0], layer["layer_name"],8,8)
+        layer_output = layer_output.flatten()
 
 
     if layer["layer_name"] == "dense":

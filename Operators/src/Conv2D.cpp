@@ -3,8 +3,8 @@
 #include <fstream>
 #include <cassert>
 #include <nlohmann/json.hpp> // JSON library
-#include <chrono>            // For timing
-#include <iomanip>           // For formatting output
+#include <chrono>           // For timing
+#include <iomanip>          // For formatted output
 
 using json = nlohmann::json;
 using namespace std;
@@ -28,13 +28,6 @@ void conv2d_1d(const vector<float> &input,
                int kernel_height, int kernel_width, int output_channels,
                int stride, const string &padding, string layername) {
 
-    // Create an output file
-    ofstream outputFile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt");
-    if (!outputFile.is_open()) {
-        cerr << "Error: Unable to open file for writing!" << endl;
-        exit(EXIT_FAILURE);
-    }
-
     // Calculate padding
     if (padding != "same" && padding != "valid") {
         cerr << "Error: Unsupported padding type: " << padding << endl;
@@ -55,7 +48,7 @@ void conv2d_1d(const vector<float> &input,
     // Resize the output vector
     output.resize(output_size, 0.0f);
 
-    // Start timing
+    // Start measuring execution time
     auto start_time = chrono::high_resolution_clock::now();
 
     // Perform convolution
@@ -97,31 +90,31 @@ void conv2d_1d(const vector<float> &input,
 
     // End timing
     auto end_time = chrono::high_resolution_clock::now();
-    chrono::duration<double> elapsed_time = end_time - start_time;
+    chrono::duration<double> execution_time = end_time - start_time;
 
-    // Save results to file
-    for (int h = 0; h < output_height; ++h) {
-        for (int w = 0; w < output_width; ++w) {
-            for (int c = 0; c < output_channels; ++c) {
-                int output_idx = (h * output_width + w) * output_channels + c;
-                outputFile << fixed << setprecision(6) << output[output_idx];
-                if (c < output_channels - 1) {
-                    outputFile << std::endl;
-                }
-            }
-            outputFile << "\n";
-        }
-        outputFile << "\n";
-    }
-
-    outputFile.close();
-    cout<< "=====================================================" << endl;
-    // Print output shape and execution time
-    cout << "Conv2D Output Shape with Linear Activation: [" 
+    cout << "=====================================================\n";
+    // Print output shape
+    cout << "Conv2D Output Shape: [" 
          << output_height << ", " 
          << output_width << ", " 
          << output_channels << "]" << endl;
-    cout << "Execution Time: " << elapsed_time.count() << " seconds" << endl;
-    cout << "Layer output successfully written to " << "F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt" << endl;
-    cout<< "=====================================================";
+
+    // Print execution time
+    cout << "Execution Time: " << execution_time.count() << " seconds" << endl;
+
+    ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    if (outfile.is_open()) {
+        for (int h = 0; h < output_height; ++h) {
+            for (int w = 0; w < output_width; ++w) {
+                int output_idx = (h * output_width + w) * output_channels;
+                outfile << fixed << setprecision(6) << output[output_idx] << " ";
+            }
+            outfile << "\n";
+        }
+        outfile.close();
+        cout << "First channel of Conv2D output saved to conv2d_first_channel_output.txt" << endl;
+    } else {
+        cerr << "Error opening file for writing!" << endl;
+    }
+    cout << "=====================================================\n";
 }
