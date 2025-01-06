@@ -9,7 +9,7 @@ This project involves creating a C++ application that handles deep learning mode
 #### operators
 Implement the C++ version of each required operator (such as Convolution, Batch Normalization, etc.). These are the functions that execute the operations for each layer, such as element-wise addition for a fully connected layer, or the forward pass of a convolution layer. The source folder contains the source files and the include folder contains the header files.
 
-#### Test Operators
+#### Test_Operators
 Contains the source code and header files for unit and model testing
 
 #### configs
