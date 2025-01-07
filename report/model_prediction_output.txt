@@ -1,4 +1,2 @@
 Predicted class at cpp: Airplane (Index: 0)
 Predicted class at python: Airplane (Index: 0)
-
-
