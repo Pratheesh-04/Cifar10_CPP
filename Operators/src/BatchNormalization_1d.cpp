@@ -103,25 +103,22 @@ void batch_normalization_1d1(const std::vector<float>& input, std::vector<float>
     // Print execution time
     std::cout << "Execution time for batch_normalization_1d1: " << execution_time.count() << " seconds\n";
 
-    // Save the first channel to a text file
-    std::ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/"+layername+".txt");
+    // Save the output of all channels to a text file
+    std::ofstream outfile("F:/MCW/c++ application/Project_Root/data/cpp_outputs/" + layername + ".txt");
     if (!outfile.is_open()) {
         std::cerr << "Error opening file for writing!" << std::endl;
         return;
     }
 
     for (size_t s = 0; s < spatial_size; ++s) {
-        size_t idx = s * channels; // First channel
-        // std::cout << std::fixed << std::setprecision(6) << output[idx] << " "; // Print to console
-        outfile << output[idx] << " "; // Write to file
-
-        if ((s + 1) % 10 == 0) {
-            // std::cout << std::endl; // Print 10 values per line
-            outfile << std::endl;
+        for (size_t c = 0; c < channels; ++c) {
+            size_t idx = s * channels + c;
+            outfile << output[idx] << " "; // Write all channel outputs for the current spatial position
         }
+        outfile << std::endl; // New line after all channels for the current spatial position
     }
-    std::cout << std::endl;
+
     outfile.close();
-    std::cout << "Output of First channel saved to data/cpp_outputs/"+layername+".txt" << std::endl;
+    std::cout << "Output of all channels saved to data/cpp_outputs/" + layername + ".txt" << std::endl;
     std::cout << "=====================================================\n";
 }
