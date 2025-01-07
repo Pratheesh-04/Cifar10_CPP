@@ -4,5 +4,4 @@
 # Ignore build folder
 build/
 
-# Ignore test.py file
-test.py
+
