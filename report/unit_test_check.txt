@@ -9,4 +9,3 @@ batch_norm3 Test Passed: All values match within tolerance (0.001).
 dense1 Test Passed: All values match within tolerance (0.001).
 batch_norm4 Test Passed: All values match within tolerance (0.001).
 dense2 Test Passed: All values match within tolerance (0.001).
-
