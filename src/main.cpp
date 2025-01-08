@@ -72,7 +72,6 @@
 
                 // Update the shared layer output
                 layer_output = conv2d_output;
-                // write_to_file(output_file, layer_output);
 
                 // Display output for the first channel (channel 0) after Conv2D
                 cout << "===============================================================================" << endl;
@@ -249,7 +248,6 @@
             }
 
             if (layer["layer_name"] == "dense") {
-    // Load the weights and biases for the Dense layer
                 vector<string> weights_file_paths = layer["weights_file_paths"].get<vector<string>>();
                 assert(weights_file_paths.size() == 2 && "Invalid number of weight paths in the configuration file for dense layer");
 
@@ -296,7 +294,6 @@
             }
 
             if (layer["layer_name"] == "dense_1") {
-    // Load the weights and biases for the Dense layer
                 vector<string> weights_file_paths = layer["weights_file_paths"].get<vector<string>>();
                 assert(weights_file_paths.size() == 2 && "Invalid number of weight paths in the configuration file for dense layer");
 
